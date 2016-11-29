@@ -1,0 +1,2 @@
+:0 correspond au stage -> version snapshot
+git show :0:nomdufichier
