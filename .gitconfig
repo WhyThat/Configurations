@@ -30,8 +30,6 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 	oops = commit --amend --no-edit
 [user]
-	email = mathieuu@gmail.com
-	name = WhyThat
 [mergetool "meld"]
 	path = C:\\Program Files (x86)\\Meld\\Meld.exe
 [color "diff"]
