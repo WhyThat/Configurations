@@ -1,2 +1,30 @@
 :0 correspond au stage -> version snapshot
 git show :0:nomdufichier
+
+permet d'enlever les espaces dans le diff pour plus de lisibilité
+git diff -w 
+
+Permet de prendre en compte tous les caractères
+git diff --word-diff-regex=.
+
+Fragmenter les fichiers pour les commit
+git add -p nomdufichier
+
+unstage 
+git reset nomDuFichier
+
+
+Retoucher le dernier commit
+git commit --amend --no-edit 
+Pour modifier le message
+git commit --ammend -m "Mieux ce truc"
+
+
+Visualiser un snapshot
+git show
+
+
+Pour stash pour et -u pour 
+git stash save -u "Message"
+Et pour appliquer --index pour restaurer le stage
+git stash pop --index
