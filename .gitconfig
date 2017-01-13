@@ -1,0 +1,48 @@
+[push]
+	default = upstream
+	followTags = true
+[core]
+	trustctime = false
+	editor = vim
+	filemode = false
+[color]
+	ui = auto
+	diff = always
+[credential]
+	helper = cache --timeout=3600
+[merge]
+	tool = meld
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
+[alias]
+	last = log -1 --stat
+	cp = cherry-pick
+	co = checkout
+	cl = clone
+	ci = commit
+	st = status
+	br = branch
+	unstage = reset HEAD --
+	dc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+	oops = commit --amend --no-edit
+[user]
+	email = mathieuu@gmail.com
+	name = WhyThat
+[mergetool "meld"]
+	path = C:\\Program Files (x86)\\Meld\\Meld.exe
+[color "diff"]
+	meta = yellow
+	meta = yellow
+	frag = magenta
+	whitespace = red
+[pager]
+	diff = diff-so-fancy | less --tabs=2 -RFX
+	show = diff-so-fancy | less --tabs=2 -RFX
+[diff]
+	mnemonicPrefix = true
+	renames = true
+	wordRegex = .
