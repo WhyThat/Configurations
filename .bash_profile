@@ -52,7 +52,7 @@ fi
 # R rebasing
 
 function parse_git_dirty() {
-	regex="working directory clean"
+	regex="working (directory|tree) clean"
 		if [[ $1 =~ $regex ]]
 			then
 				echo ""
