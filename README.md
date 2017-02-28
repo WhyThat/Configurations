@@ -8,7 +8,7 @@ Ce dépot permet de configurer cygwin (git bash) pour windows
 1. diff so fancy permet de stylisé les diff de facon plus lisible
 ```$ npm install -g diff-so-fancy```
 2. git Credential
-[Depot git](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/eleases) pour récupérer l'installeur
+[Depot git](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases) pour récupérer l'installeur
 3.[Installer meld](http://meldmerge.org/) pour gérer les conflits
 
 ## Installation
