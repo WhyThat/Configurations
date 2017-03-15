@@ -18,17 +18,22 @@
 	prompt = false
 	trustexitcode = false
 [alias]
-	last = log -1 --stat
-	cp = cherry-pick
-	co = checkout
-	cl = clone
-	ci = commit
-	st = status
 	br = branch
-	unstage = reset HEAD --
+	ci = commit
+	cl = clone
+	co = checkout
+	cp = cherry-pick
 	dc = diff --cached
+	hidden = "!f() { git ls-files -v \"$@\" | grep \"^[a-z]\"; }; f"
+	ignored = "!f() { git status -s --ignored \"$@\" | grep \"^!!\"; }; f"
+	last = log -1 --stat
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 	oops = commit --amend --no-edit
+	st = status
+	unhide = update-index --no-assume-unchanged
+	unhide-all = update-index --really-refresh
+	unstage = reset HEAD --
+    hide = update-index --assume-unchanged
 [user]
 [mergetool "meld"]
 	path = C:\\Program Files (x86)\\Meld\\Meld.exe
