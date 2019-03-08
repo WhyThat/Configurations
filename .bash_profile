@@ -157,4 +157,10 @@ function up()
 	git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | grep -v "\*" | grep -v "master" | grep -v "develop" | xargs -r git branch -D
 }
 
+# Diff the nth modified file of the status list
+function gd()
+{
+	git status | grep modified: | cut -c 14- | sed -n "${1}p" | xargs -r git diff
+}
+
 set_prompt
