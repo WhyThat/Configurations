@@ -160,7 +160,7 @@ function up()
 # Diff the nth modified file of the status list
 function gd()
 {
-	git status | grep modified: | cut -c 14- | sed -n "${1}p" | xargs -r git diff
+	git status | grep modified: | cut -c 14- | sed -n "${1}p" | xargs -r git --no-pager diff
 }
 
 set_prompt
