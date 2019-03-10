@@ -134,4 +134,33 @@ function set_prompt {
 		PS1="$RED\h $GREEN\w $RED_BOLD\$(current_git_branch_with_markers) $BLACK\$ "
 }
 
+alias g='git'
+
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+	. /etc/bash_completion
+fi
+
+function_exists() {
+	declare -f -F $1 > /dev/null
+	return $?
+}
+
+for al in `__git_aliases`; do
+	alias g$al="git $al"
+	
+	complete_func=_git_$(__git_aliased_command $al)
+	function_exists $complete_fnc && __git_complete g$al $complete_func
+done
+
+function up()
+{
+	git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | grep -v "\*" | grep -v "master" | grep -v "develop" | xargs -r git branch -D
+}
+
+# Diff the nth modified file of the status list
+function gd()
+{
+	git status | grep modified: | cut -c 14- | sed -n "${1}p" | xargs -r git --no-pager diff
+}
+
 set_prompt
